@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Verification Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<body>
+    <div class="form-container">
+        <div class="form-header">
+            <h2><i class="fas fa-user-check"></i> Human Verification</h2>
+            <p>Please fill in all details to verify you're human</p>
+        </div>
+        
+        <div class="form-body">
+            <form id="verificationForm">
+                <!-- Full Name Field -->
+                <div class="form-group">
+                    <label for="fullName" class="form-label">
+                        <i class="fas fa-user"></i> Full Name
+                    </label>
+                    <input type="text" class="form-control" id="fullName" placeholder="Enter your full name">
+                    <span class="valid-icon"><i class="fas fa-check-circle"></i></span>
+                    <span class="invalid-icon"><i class="fas fa-exclamation-circle"></i></span>
+                    <div class="error-message" id="nameError">
+                        <i class="fas fa-exclamation-circle"></i> Name must be at least 5 characters long
+                    </div>
+                </div>
+
+                <!-- Email Field -->
+                <div class="form-group">
+                    <label for="email" class="form-label">
+                        <i class="fas fa-envelope"></i> Email ID
+                    </label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                    <span class="valid-icon"><i class="fas fa-check-circle"></i></span>
+                    <span class="invalid-icon"><i class="fas fa-exclamation-circle"></i></span>
+                    <div class="error-message" id="emailError">
+                        <i class="fas fa-exclamation-circle"></i> Please enter a valid email address with @ character
+                    </div>
+                </div>
+
+                <!-- Phone Number Field -->
+                <div class="form-group">
+                    <label for="phone" class="form-label">
+                        <i class="fas fa-phone"></i> Phone Number
+                    </label>
+                    <input type="tel" class="form-control" id="phone" placeholder="Enter your 10-digit phone number">
+                    <span class="valid-icon"><i class="fas fa-check-circle"></i></span>
+                    <span class="invalid-icon"><i class="fas fa-exclamation-circle"></i></span>
+                    <div class="error-message" id="phoneError">
+                        <i class="fas fa-exclamation-circle"></i> Please enter a valid 10-digit phone number (not 123456789)
+                    </div>
+                </div>
+
+                <!-- Password Field -->
+                <div class="form-group">
+                    <label for="password" class="form-label">
+                        <i class="fas fa-lock"></i> Password
+                    </label>
+                    <input type="password" class="form-control" id="password" placeholder="Create a strong password">
+                    <span class="password-toggle" id="passwordToggle">
+                        <i class="fas fa-eye"></i>
+                    </span>
+                    <span class="valid-icon"><i class="fas fa-check-circle"></i></span>
+                    <span class="invalid-icon"><i class="fas fa-exclamation-circle"></i></span>
+                    <div class="progress password-strength" id="passwordStrength">
+                        <div class="progress-bar" role="progressbar"></div>
+                    </div>
+                    <div class="strength-label" id="strengthLabel"></div>
+                    <div class="error-message" id="passwordError">
+                        <i class="fas fa-exclamation-circle"></i> Password must be at least 8 characters and not be "password" or your name
+                    </div>
+                </div>
+
+                <!-- Confirm Password Field -->
+                <div class="form-group">
+                    <label for="confirmPassword" class="form-label">
+                        <i class="fas fa-lock"></i> Confirm Password
+                    </label>
+                    <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your password">
+                    <span class="password-toggle" id="confirmPasswordToggle">
+                        <i class="fas fa-eye"></i>
+                    </span>
+                    <span class="valid-icon"><i class="fas fa-check-circle"></i></span>
+                    <span class="invalid-icon"><i class="fas fa-exclamation-circle"></i></span>
+                    <div class="error-message" id="confirmPasswordError">
+                        <i class="fas fa-exclamation-circle"></i> Passwords do not match
+                    </div>
+                </div>
+
+                <!-- Additional Security Field -->
+                <div class="form-group">
+                    <div class="security-check">
+                        <label for="humanCheck" class="form-label">
+                            <i class="fas fa-shield-alt"></i> Security Check: What is 7 + 5?
+                        </label>
+                        <input type="text" class="form-control" id="humanCheck" placeholder="Enter the result">
+                        <span class="valid-icon"><i class="fas fa-check-circle"></i></span>
+                        <span class="invalid-icon"><i class="fas fa-exclamation-circle"></i></span>
+                        <div class="error-message" id="humanCheckError">
+                            <i class="fas fa-exclamation-circle"></i> Please enter the correct answer to prove you're human
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-group">
+                    <button type="submit" class="btn btn-verify">
+                        <i class="fas fa-check-circle"></i> Verify Now
+                    </button>
+                </div>
+
+                <!-- Success Message -->
+                <div class="success-message" id="successMessage">
+                    <i class="fas fa-check-circle"></i> Success! Your form has been submitted and you've been verified as human.
+                </div>
+            </form>
+            
+            <div class="footer">
+                <p>This form helps us prevent automated submissions. Your data is secure.</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    </body>
+    
